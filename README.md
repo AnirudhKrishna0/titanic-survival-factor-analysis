@@ -77,4 +77,4 @@ This suggests survival was driven primarily by **social hierarchy and evacuation
 
 Dataset sourced from: https://matthew-brett.github.io/cfd2020/data/titanic.html
 
-Credits to the original creator for compiling the Titanic passenger data.
+Credits to the creators for compiling the Titanic passenger data.
