@@ -64,6 +64,7 @@ The highest probability of survival:
 
 When gender is excluded:
 - 1st class passengers had the highest survival probability
+
 (Marginal rise in odds)
 - From the United States
 - Embarked from Southampton 
