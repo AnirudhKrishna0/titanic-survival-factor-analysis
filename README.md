@@ -63,18 +63,21 @@ The highest probability of survival:
 - Embarked from Southampton 
 
 When gender is excluded:
-- 1st class passengers had the highest survival probability  
+- 1st class passengers had the highest survival probability
+  (Marginal rise in odds)
+- From the United States
+- Embarked from Southampton 
 
 This suggests survival was driven primarily by **social hierarchy and evacuation policy**, rather than chance.
 
 ------
 
 ## Tools Used
+
 - Python  
 - Pandas
 
 ## Dataset
 
 Dataset sourced from: https://matthew-brett.github.io/cfd2020/data/titanic.html
-
 Credits to the creators for compiling the Titanic passenger data.
