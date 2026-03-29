@@ -1,4 +1,10 @@
-# Titanic Survival Factor Analysis
+### Update Ver 2 : Titanic Survival Factor Analysis 
+
+Refined the analysis by converting raw survival counts into percentage-based survival rates across class on certain social groups.
+
+Key finding: While women and children had the highest survival rates overall, class significantly influenced outcomes.
+First and second class passengers showed extremely high survival rates (85–100%), whereas third class survival dropped sharply (37–51%), indicating that class constraints impacted even priority groups like children.
+
 
 ## Problem
 What factors most strongly influenced survival on the Titanic?  
@@ -37,16 +43,24 @@ Was survival random, co-occurences?
   - Most survivors were from the US and England  
   - This aligns with the majority composition of passengers, not necessarily higher survival advantage  
 
+- **Class modifies survival within each group**
+  - Survival on the Titanic was primarily driven by gender and age (women and children first), but class significantly influenced outcomes within these groups.
+  - Women and children had the highest survival rates overall, but class had a decisive impact—first and second class passengers had extremely high survival (85–100%), while third class saw a sharp drop (around 37–51%), indicating that class significantly constrained the ‘women and children first’ principle.
+  - Notably, only 37% of third-class children survived, showing that class could override even the highest-priority survival group.
+
 ------
 
 ## Key Insight
 
 Survival was **not random**.
 
+This analysis is based on counts, not normalized survival rates, which may slightly bias interpretation.
+
 It followed a clear prioritization hierarchy:
 1. Gender (women and children first)
 2. Passenger class
-3. Secondary factors (location, fare within class) logistics may have provided a major edge for some passengers 
+3. Secondary factors (location, fare within class) logistics may have provided a major edge for a very few passengers 
+4. Miss/Mrs survival >> men
 
 Even when controlling for class:
 - Gender remained the dominant factor  
