@@ -70,8 +70,8 @@ model.fit(X_train, y_train)
 print("Accuracy:", model.score(X_test, y_test))
 
 # 7. Feature weights 
-importance = pd.Series(model.coef_[0], index=X.columns).sort_values()
-print(importance)
+importane = pd.Series(model.coef_[0], index=X.columns).sort_values()
+print(importane)
 
 # ===== END? =====
 
