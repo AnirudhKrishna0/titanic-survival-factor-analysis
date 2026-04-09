@@ -1,18 +1,23 @@
-### Update Ver 2 : Titanic Survival Factor Analysis 
+### Update Ver 5 : Titanic Survival Factor Analysis 
 
 Refined the analysis by converting raw survival counts into percentage-based survival rates across class on certain social groups.
 
 Key finding: While women and children had the highest survival rates overall, class significantly influenced outcomes.
 First and second class passengers showed extremely high survival rates (85–100%), whereas third class survival dropped sharply (37–51%), indicating that class constraints impacted even priority groups like children.
 
+Added Logistic Regression model to validate result 
+
+Used fare_diff instead of fare, and person_standing instead of title for better scaling feature
 
 ## Problem
+
 What factors most strongly influenced survival on the Titanic?  
-Was survival random, co-occurences?
+Was survival random, co-occurrences?
 
 ------
 
 ## Approach
+
 - Used Python (Pandas) for data analysis  
 - Performed group-based comparisons across:
   - Gender
@@ -20,7 +25,10 @@ Was survival random, co-occurences?
   - Fare
   - Embarkment location  
 - Compared survival rates across combinations of features  
-
+- Used Logistic Regression as a baseline model because:
+  - Works well for binary classification problems
+  - Provides interpretable feature importance through learned weights
+  
 ------
 
 ## Key Findings
@@ -48,6 +56,14 @@ Was survival random, co-occurences?
   - Women and children had the highest survival rates overall, but class had a decisive impact—first and second class passengers had extremely high survival (85–100%), while third class saw a sharp drop (around 37–51%), indicating that class significantly constrained the ‘women and children first’ principle.
   - Notably, only 37% of third-class children survived, showing that class could override even the highest-priority survival group.
 
+-------
+
+## Limitations
+
+- Logistic Regression assumes linear relationships between features and outcome
+- May fail to capture complex interactions between variables
+- Dataset size is limited can affect generalization
+
 ------
 
 ## Key Insight
@@ -66,24 +82,29 @@ Even when controlling for class:
 - Gender remained the dominant factor  
 - Class influenced physical access to lifeboats  
 
+Applied Logistic Regression using an 80/20 train-test split to evaluate performance on unseen data.
+  - Gender, age , class, Person_Standing, Embarked and Fare were used as the main features
+  - achieved a 79% accuracy using logistic regression 
+  - used fare_diff instead of fare, and person_standing instead of title 
+  - Removing fare slightly reduced model accuracy, suggesting it still contains some predictive signal. However, its impact was limited compared to gender and class.
+
+  ### 📊 Model Interpretation (Top Factors)
+    - Gender (male) → strong negative impact on survival  
+    - 3rd Class → strong negative impact  
+    - Titles (Mr, Mrs, Miss) → strong social indicators  
+    - Age → minor influence negatively 
+
 ------
 
 ## Conclusion
 
-The highest probability of survival:
-- Female
-- 1st class passenger
-- From the United States
-- Embarked from Southampton 
+Survival on the Titanic was not random.
 
-When gender is excluded:
-- 1st class passengers had the highest survival probability
+The strongest factors were:
+1. Gender
+2. Passenger class
 
-(Marginal rise in odds)
-- From the United States
-- Embarked from Southampton 
-
-This suggests survival was driven primarily by **social hierarchy and evacuation policy**, rather than chance.
+Logistic regression confirmed that social hierarchy and evacuation policies played a dominant role in survival outcomes.
 
 ------
 
