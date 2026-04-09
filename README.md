@@ -88,7 +88,7 @@ Applied Logistic Regression using an 80/20 train-test split to evaluate performa
   - used fare_diff instead of fare, and person_standing instead of title 
   - Removing fare slightly reduced model accuracy, suggesting it still contains some predictive signal. However, its impact was limited compared to gender and class.
 
-  ### 📊 Model Interpretation (Top Factors)
+  ### Model Interpretation (Top Factor)
     - Gender (male) → strong negative impact on survival  
     - 3rd Class → strong negative impact  
     - Titles (Mr, Mrs, Miss) → strong social indicators  
