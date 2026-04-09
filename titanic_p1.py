@@ -57,7 +57,7 @@ X = pd.get_dummies(X, drop_first=True)
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=50
+    X, y, test_size=0.2, random_state=42
 )
 
 # 5. Train 
@@ -70,10 +70,9 @@ model.fit(X_train, y_train)
 print("Accuracy:", model.score(X_test, y_test))
 
 # 7. Feature weights 
-importane = pd.Series(model.coef_[0], index=X.columns).sort_values()
-print(importane)
+importance = pd.Series(model.coef_[0], index=X.columns).sort_values()
+print(importance)
 
 # ===== END? =====
-
 
 #print(main)

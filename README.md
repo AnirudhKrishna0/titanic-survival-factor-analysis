@@ -1,11 +1,13 @@
 ### Update Ver 5 : Titanic Survival Factor Analysis 
 
+This project focuses on understanding model decisions rather than maximizing accuracy.
+
 Refined the analysis by converting raw survival counts into percentage-based survival rates across class on certain social groups.
 
 Key finding: While women and children had the highest survival rates overall, class significantly influenced outcomes.
 First and second class passengers showed extremely high survival rates (85–100%), whereas third class survival dropped sharply (37–51%), indicating that class constraints impacted even priority groups like children.
 
-Added Logistic Regression model to validate result 
+Added Logistic Regression model to validate the findings
 
 Used fare_diff instead of fare, and person_standing instead of title for better scaling feature
 
@@ -62,7 +64,7 @@ Was survival random, co-occurrences?
 
 - Logistic Regression assumes linear relationships between features and outcome
 - May fail to capture complex interactions between variables
-- Dataset size is limited can affect generalization
+- Dataset size is limited, which can affect generalization
 
 ------
 
@@ -75,7 +77,7 @@ This analysis is based on counts, not normalized survival rates, which may sligh
 It followed a clear prioritization hierarchy:
 1. Gender (women and children first)
 2. Passenger class
-3. Secondary factors (location, fare within class) logistics may have provided a major edge for a very few passengers 
+3. Secondary factors (location, fare within class) Access and proximity to lifeboats likely provided an advantage to certain passengers.
 4. Miss/Mrs survival >> men
 
 Even when controlling for class:
@@ -83,18 +85,18 @@ Even when controlling for class:
 - Class influenced physical access to lifeboats  
 
 Applied Logistic Regression using an 80/20 train-test split to evaluate performance on unseen data.
-  - Gender, age , class, Person_Standing, Embarked and Fare were used as the main features
-  - achieved a 79% accuracy using logistic regression 
+  - achieved a 78% accuracy using logistic regression 
   - used fare_diff instead of fare, and person_standing instead of title 
+  - Gender, age, class, person_standing, embarked, and fare_diff were used as the main features
   - Removing fare slightly reduced model accuracy, suggesting it still contains some predictive signal. However, its impact was limited compared to gender and class.
 
-  ### Model Interpretation (Top Factor)
+### Model Interpretation (Top Factors)
     - Gender (male) → strong negative impact on survival  
     - 3rd Class → strong negative impact  
     - Titles (Mr, Mrs, Miss) → strong social indicators  
     - Age → minor influence negatively 
 
-------
+------ 
 
 ## Conclusion
 
@@ -117,3 +119,11 @@ Logistic regression confirmed that social hierarchy and evacuation policies play
 
 Dataset sourced from: https://matthew-brett.github.io/cfd2020/data/titanic.html
 Credits to the creators for compiling the Titanic passenger data.
+
+## How to Run
+
+1. Install dependencies:
+   pip install pandas scikit-learn
+
+2. Run:
+   python titanic_p1.py
