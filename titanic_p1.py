@@ -1,7 +1,9 @@
 
 import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
 
-main=pd.read_csv(r"C:\Users\aniru\OneDrive\Desktop\week 2\week1\titanic_clean.csv")
+main=pd.read_csv("titanic_clean.csv")
 
 #print(main.isnull().sum())
 
@@ -53,16 +55,12 @@ X = main.drop(columns=["name","survived","country","title","fare"]) #using fare_
 # 3. Convert text to no.
 X = pd.get_dummies(X, drop_first=True)
 
-# 4. Split data 
-from sklearn.model_selection import train_test_split
-
+# 4. Split 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
-)
+    )
 
 # 5. Train 
-from sklearn.linear_model import LogisticRegression
-
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
 
@@ -73,6 +71,11 @@ print("Accuracy:", model.score(X_test, y_test))
 importance = pd.Series(model.coef_[0], index=X.columns).sort_values()
 print(importance)
 
+# baseline
+baseline = max(y.mean(), 1 - y.mean())
+print("Baseline Accuracy:", baseline)
+
+print("Features used:", X.columns.tolist())
 # ===== END? =====
 
 #print(main)
