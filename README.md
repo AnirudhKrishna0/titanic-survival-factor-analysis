@@ -1,8 +1,8 @@
 # Titanic Survival Factor Analysis
 
-This project focuses on understanding *why* passengers survived, not just predicting survival.
+This project focuses on understanding *why* passengers survived, not predicting survival.
 
-The goal is to clearly separate:
+The goal is to separate:
 - Observed patterns in the data (EDA)
 - Learned relationships from a machine learning model
 
@@ -12,16 +12,16 @@ The goal is to clearly separate:
 
 What factors most strongly influenced survival on the Titanic?
 
-Was survival random, or driven by identifiable patterns?
+Was survival random or driven by identifiable patterns?
 
 ---
 
 ## Approach
 
 - Data Cleaning using Pandas  
-- Exploratory Data Analysis (EDA) using percentage-based comparisons  
+- Exploratory Data Analysis using percentage-based comparisons  
 - Feature Engineering to extract meaningful signals  
-- Logistic Regression as an interpretable baseline model  
+- Logistic Regression as a interpretable baseline model  
 
 ---
 
@@ -50,7 +50,7 @@ Example:
 - 1st/2nd class women & children → ~85–100% survival  
 - 3rd class → ~37–51% survival  
 
-> This suggests socio-economic constraints influenced access to lifeboats.
+> This suggests socio-economic constraints influenced access to lifeboats during evacuation.
 
 ---
 
@@ -84,8 +84,7 @@ Example:
 - Female-related features → positive impact  
 - Age → minor negative effect  
 
-> Coefficients show direction and strength, not probabilities.
-
+> Coefficients show how strong the effect is and whether it increases or decreases but not probability.
 ---
 
 ## Key Insights
